@@ -5,24 +5,22 @@ class Header extends Component {
   state = {};
   render() {
     return (
-      
-        <HeaderContainer>
-          <HeaderLeft>
-            <img src="/images/icon_h128.png" />
-            <span>Enter to Learn</span>
-          </HeaderLeft>
-          <HeaderCenter>
-            <>
-              <MainHeader >Vidya Bharati's</MainHeader>
-              <Subheader>Sri Vijnana Vihara Schools</Subheader>
-            </>
-          </HeaderCenter>
-          <HeaderRight>
-            <img src="/images/vidhya_bharati.png" />
-            <span>Leave to Serve</span>
-          </HeaderRight>
-        </HeaderContainer>
-      
+      <HeaderContainer>
+        <HeaderLeft>
+          <img src="/images/icon_h128.png" />
+          <span>Enter to Learn</span>
+        </HeaderLeft>
+        <HeaderCenter>
+          <>
+            <MainHeader>Vidya Bharati's</MainHeader>
+            <Subheader>Sri Vijnana Vihara Schools</Subheader>
+          </>
+        </HeaderCenter>
+        <HeaderRight>
+          <img src="/images/vidhya_bharati.png" />
+          <span>Leave to Serve</span>
+        </HeaderRight>
+      </HeaderContainer>
     );
   }
 }
@@ -30,20 +28,22 @@ class Header extends Component {
 export default Header;
 
 const HeaderContainer = styled.div`
-  left:5%;
-  right:5%;
-  height: 260px;
+  left: 5%;
+  right: 5%;
+  height: 180px;
   display: flex;
   align-items: center;
   margin-top: 10px;
-  position:absolute;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter:saturate(120%) blur(10px);
-  box-shadow:rgb(255 255 253 / 69%) 10px 26px 30px -10px,
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: saturate(120%) blur(10px);
+  box-shadow: rgb(255 255 253 / 69%) 10px 26px 30px -10px,
     rgb(253 245 253 / 73%) 0px 16px 10px -10px;
-    border-radius: 10px;
-    border: 4px solid transparent;
-  
+  border-radius: 10px;
+  border: 4px solid transparent;
+  @media (max-width: 600px) {
+    height: 140px;
+  }
 `;
 
 const HeaderLeft = styled.div`
@@ -51,7 +51,7 @@ const HeaderLeft = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-  color: #004E89;
+  color: #004e89;
   @media (max-width: 1113px) {
     display: none;
   }
@@ -61,7 +61,7 @@ const HeaderLeft = styled.div`
     cursor: pointer;
   }
   > span {
-    color: #004E89;
+    color: #004e89;
     padding: 0 20px;
     font-weight: bold;
   }
@@ -79,23 +79,24 @@ const HeaderCenter = styled.div`
 `;
 
 const HeaderRight = styled(HeaderLeft)`
-  left:-2%;
+  left: -2%;
   > img {
     width: 100px;
   }
 `;
 
-
 const MainHeader = styled.span`
-        color:#d24914;
-        font-weight: bold;
-        font-size: 28px;
-        font-family: 'Roboto', sans-serif;
-`
+  color: #d24914;
+  font-weight: bold;
+  font-size: 28px;
+  font-family: "Roboto", sans-serif;
+`;
 
 const Subheader = styled.span`
-        color: #03045E;
-        font-size: 40px;
-        font-family: 'Poppins', sans-serif;
-
-`
+  color: #03045e;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
+`;
