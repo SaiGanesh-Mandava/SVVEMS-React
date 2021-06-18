@@ -4,6 +4,7 @@ class Card extends Component {
   state = {};
   render() {
     return (
+      <Container>
       <CardContainer>
         <CardBody>
           <Photo>
@@ -16,6 +17,7 @@ class Card extends Component {
           </CardInfo>
         </CardBody>
       </CardContainer>
+      </Container>
     );
   }
 }
@@ -23,7 +25,7 @@ class Card extends Component {
 export default Card;
 
 const CardContainer = styled.div`
-  background-image: url("/images/webb.png");
+  
   height: 72vh;
 `;
 
@@ -87,3 +89,9 @@ const Photo = styled.div`
     object-fit: cover;
   }
 `;
+
+
+const Container = styled.div`
+      
+      display:flex;
+`

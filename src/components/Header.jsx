@@ -5,7 +5,7 @@ class Header extends Component {
   state = {};
   render() {
     return (
-      <div>
+      
         <HeaderContainer>
           <HeaderLeft>
             <img src="/images/icon_h128.png" />
@@ -13,8 +13,8 @@ class Header extends Component {
           </HeaderLeft>
           <HeaderCenter>
             <>
-              <span>Vidya Bharati's</span>
-              <span>Sri Vijana Vijara Schools</span>
+              <MainHeader >Vidya Bharati's</MainHeader>
+              <Subheader>Sri Vijnana Vihara Schools</Subheader>
             </>
           </HeaderCenter>
           <HeaderRight>
@@ -22,7 +22,7 @@ class Header extends Component {
             <span>Leave to Serve</span>
           </HeaderRight>
         </HeaderContainer>
-      </div>
+      
     );
   }
 }
@@ -30,14 +30,20 @@ class Header extends Component {
 export default Header;
 
 const HeaderContainer = styled.div`
+  left:5%;
+  right:5%;
   height: 260px;
   display: flex;
   align-items: center;
-  background-image: url("/images/webb.png");
-  background-repeat: repeat;
-  background-color: blue;
-  padding: 0px 86.5px 0px 86.5px;
   margin-top: 10px;
+  position:absolute;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter:saturate(120%) blur(10px);
+  box-shadow:rgb(255 255 253 / 69%) 10px 26px 30px -10px,
+    rgb(253 245 253 / 73%) 0px 16px 10px -10px;
+    border-radius: 10px;
+    border: 4px solid transparent;
+  
 `;
 
 const HeaderLeft = styled.div`
@@ -45,19 +51,19 @@ const HeaderLeft = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-
+  color: #004E89;
   @media (max-width: 1113px) {
     display: none;
   }
-
   > img {
     width: 160px;
     height: 100px;
     cursor: pointer;
   }
   > span {
-    color: white;
-    padding: 0 25px;
+    color: #004E89;
+    padding: 0 20px;
+    font-weight: bold;
   }
 `;
 
@@ -73,7 +79,23 @@ const HeaderCenter = styled.div`
 `;
 
 const HeaderRight = styled(HeaderLeft)`
+  left:-2%;
   > img {
     width: 100px;
   }
 `;
+
+
+const MainHeader = styled.span`
+        color:#d24914;
+        font-weight: bold;
+        font-size: 28px;
+        font-family: 'Roboto', sans-serif;
+`
+
+const Subheader = styled.span`
+        color: #03045E;
+        font-size: 40px;
+        font-family: 'Poppins', sans-serif;
+
+`
