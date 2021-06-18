@@ -5,18 +5,23 @@ class Card extends Component {
   render() {
     return (
       <Container>
-      <CardContainer>
-        <CardBody>
-          <Photo>
-            <img src="https://image.slidesharecdn.com/rgvs-naaistam-part1-110111041238-phpapp01/95/rgv-naa-istam-part1-1-728.jpg?cb=1294719312" />
-          </Photo>
-          <CardInfo>
-            <SchoolName>sri vijnana vihara</SchoolName>
-            <Divider />
-            <Button>Visit School</Button>
-          </CardInfo>
-        </CardBody>
-      </CardContainer>
+        <CardContainer>
+          <CardBody>
+            <Photo>
+              <img src="https://image.slidesharecdn.com/rgvs-naaistam-part1-110111041238-phpapp01/95/rgv-naa-istam-part1-1-728.jpg?cb=1294719312" />
+            </Photo>
+            <CardInfo>
+              <SchoolName>
+                sri vijnana vihara English medium high school
+              </SchoolName>
+              <Location>
+                <img src="images/pin.png" />
+                <span>Enikepadu</span>
+              </Location>
+              <Button>Visit School</Button>
+            </CardInfo>
+          </CardBody>
+        </CardContainer>
       </Container>
     );
   }
@@ -25,14 +30,13 @@ class Card extends Component {
 export default Card;
 
 const CardContainer = styled.div`
-  
   height: 72vh;
 `;
 
 const CardBody = styled.div`
   background-color: white;
   height: 400px;
-  width: 300px;
+  width: 280px;
   position: absolute;
   margin: auto;
   top: 150px;
@@ -40,7 +44,8 @@ const CardBody = styled.div`
   left: 0;
   right: 0;
   border-radius: 8px;
-  box-shadow: 0 0 20px 10px rgba(233, 144, 7, 0.7);
+
+  /* box-shadow: 0 0 20px 10px rgba(233, 144, 7, 0.7); */
 `;
 
 const CardInfo = styled.div`
@@ -52,34 +57,42 @@ const CardInfo = styled.div`
 
 const SchoolName = styled.div`
   font-size: 35px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   position: absolute;
-  letter-spacing: 1px;
-  font-weight: 600;
-  top: 100px;
+  font-size: 32;
+  top: 70px;
+  left: 25px;
+  right: 40px;
 `;
-const Divider = styled.div`
-  background-color: #949594;
-  height: 1.5px;
-  width: 50px;
-  position: absolute;
-  top: 190px;
+
+const Location = styled.div`
+  > img {
+    position: absolute;
+    height: 25px;
+    top: 290px;
+    left: 25px;
+  }
+  > span {
+    position: absolute;
+    top: 298px;
+    left: 50px;
+  }
 `;
 
 const Button = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 25px;
   background-color: #f79f08;
-  border: none;
   font-size: 20px;
-  padding: 13px 25px;
+  border-radius: 15px 15px 15px 15px;
+  padding: 10px 20px;
   color: white;
   font-family: "Work Sans", sans-serif;
 `;
 
 const Photo = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
   border-radius: 100px;
   margin: -60px auto 0;
@@ -90,8 +103,6 @@ const Photo = styled.div`
   }
 `;
 
-
 const Container = styled.div`
-      
-      display:flex;
-`
+  display: flex;
+`;
