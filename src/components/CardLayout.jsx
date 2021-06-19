@@ -156,12 +156,12 @@ const Wrap = styled.div`
 `;
 
 const SchoolName = styled.div`
-  font-size: 35px;
+  font-size: 31px;
   font-family: "PT Serif", serif;
   color: #002855;
   position: absolute;
   font-size: 32;
-  top: 70px;
+  top: 68px;
   left: 25px;
   right: 40px;
 
