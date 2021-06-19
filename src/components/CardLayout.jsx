@@ -88,16 +88,17 @@ const Container = styled.main`
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-
   @media (max-width: 1340px) and (min-width: 823px) {
     margin-top: 24.5%;
     grid-gap: 20px;
-
+    bottom:0px;
     grid-template-columns: repeat(2, minmax(0, 2fr));
   }
   @media (max-width: 822px) {
     margin-top: 35%;
     grid-gap: 20px;
+    bottom:0px;
+    padding-bottom: 25px;
     grid-template-columns: repeat(1, minmax(0, 2fr));
   }
 `;
