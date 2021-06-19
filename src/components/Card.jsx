@@ -40,7 +40,7 @@ class Card extends Component {
   }
   render() {
     return (
-      <Container>
+      
         <CardContainer>
           <CardBody>
             <Photo>
@@ -58,7 +58,7 @@ class Card extends Component {
             </CardInfo>
           </CardBody>
         </CardContainer>
-      </Container>
+      
     );
   }
 }
@@ -67,6 +67,7 @@ export default Card;
 
 const CardContainer = styled.div`
   height: 72vh;
+  display:inline;
 `;
 
 const CardBody = styled.div`
@@ -137,6 +138,4 @@ const Photo = styled.div`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-`;
+

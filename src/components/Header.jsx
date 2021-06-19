@@ -5,6 +5,7 @@ class Header extends Component {
   state = {};
   render() {
     return (
+      <Container>
       <HeaderContainer>
         <HeaderLeft>
           <img src="/images/icon_h128.png" />
@@ -21,12 +22,20 @@ class Header extends Component {
           <span>Leave to Serve</span>
         </HeaderRight>
       </HeaderContainer>
+      </Container>
     );
   }
 }
 
 export default Header;
 
+const Container = styled.div`
+   display:inline;
+   position:absolute;
+   width:100%;
+   height: auto%;
+
+`
 const HeaderContainer = styled.div`
   left: 5%;
   right: 5%;
