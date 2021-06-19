@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Card from "./Card";
 import Header from "./Header";
 
-import CardLayout from './CardLayout';
+import CardLayout from "./CardLayout";
 import styled from "styled-components";
 
 class Landing extends Component {
@@ -11,24 +10,17 @@ class Landing extends Component {
     return (
       <Container>
         <Header />
-        <CardLayout/>
-        </Container>
-      
+        <CardLayout />
+      </Container>
     );
   }
 }
 
 export default Landing;
 
-
-
 const Container = styled.div`
-   display:inline;
-   position:absolute;
-   width:100%;
-   height: 100%;
-  
-    
-
-
-`
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`;
