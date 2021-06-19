@@ -1,7 +1,43 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 class Card extends Component {
-  state = {};
+  state = {
+    error: null,
+    isLoaded: false,
+    school_Name: [],
+    school_Location: [],
+    school_Code: [],
+  };
+
+  componentDidMount() {
+    fetch("https://devapi.srivijnanavihara.com/general/home/GET_META_DATA")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          let data = result.msg.results;
+          data.forEach((key, index) => {
+            if (key.item === "School_Locations") {
+              var location = JSON.parse(key.codes);
+              this.setState({ school_Location: location, isLoaded: true });
+            }
+            if (key.item === "school_full_names") {
+              var name = JSON.parse(key.codes);
+              this.setState({ school_Name: name, isLoaded: true });
+            }
+            if (key.item === "School_Codes") {
+              var code = JSON.parse(key.codes);
+              this.setState({ school_Code: code, isLoaded: true });
+            }
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  }
   render() {
     return (
       <Container>
@@ -44,8 +80,6 @@ const CardBody = styled.div`
   left: 0;
   right: 0;
   border-radius: 8px;
-
-  /* box-shadow: 0 0 20px 10px rgba(233, 144, 7, 0.7); */
 `;
 
 const CardInfo = styled.div`
